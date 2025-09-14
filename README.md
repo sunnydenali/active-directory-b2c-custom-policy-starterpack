@@ -200,7 +200,7 @@ To migrate from the older version of the starter pack to this version:
     ```xml
     <!-- file: TrustFrameworkExtensions.xml -->
     <BasePolicy>
-      <TenantId>yourtenant.onmicrosoft.com</TenantId>
+      <TenantId>myyorkorg.onmicrosoft.com</TenantId>
       <PolicyId>B2C_1A_TrustFrameworkBase</PolicyId>
     </BasePolicy>
     ```
@@ -210,7 +210,7 @@ To migrate from the older version of the starter pack to this version:
     ```xml
     <!-- file: TrustFrameworkExtensions.xml -->
     <BasePolicy>
-      <TenantId>yourtenant.onmicrosoft.com</TenantId>
+      <TenantId>myyorkorg.onmicrosoft.com</TenantId>
       <PolicyId>B2C_1A_TrustFrameworkLocalization</PolicyId>
     </BasePolicy>
     ```
