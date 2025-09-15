@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TrustFrameworkPolicy
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06"
+  xsi:noNamespaceSchemaLocation="TrustFrameworkPolicy_0.3.0.0.xsd"
   PolicySchemaVersion="0.3.0.0"
   TenantId="myyorkorg.onmicrosoft.com"
   PolicyId="B2C_1A_signup_signin"
@@ -34,4 +34,5 @@
       <SubjectNamingInfo ClaimType="sub" />
     </TechnicalProfile>
   </RelyingParty>
+
 </TrustFrameworkPolicy>
