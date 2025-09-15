@@ -8,6 +8,17 @@
         PolicyId="B2C_1A_TrustFrameworkExtensions"
         PublicPolicyUri="http://myyorkorg.onmicrosoft.com/B2C_1A_TrustFrameworkExtensions">
 
+    <!-- Enable diagnostics / App Insights -->
+    <Diagnostics>
+        <ApplicationInsights>
+            <InstrumentationKey>61a97026-4934-43d3-baa0-596e01d4d821</InstrumentationKey>
+            <!-- Optional: SamplingPercentage reduces telemetry volume -->
+            <SamplingPercentage>100</SamplingPercentage>
+            <!-- Optional: Enable verbose logging for custom policies -->
+            <EnableVerboseTracing>true</EnableVerboseTracing>
+        </ApplicationInsights>
+    </Diagnostics>
+
     <BasePolicy>
         <TenantId>myyorkorg.onmicrosoft.com</TenantId>
         <PolicyId>B2C_1A_TrustFrameworkLocalization</PolicyId>
