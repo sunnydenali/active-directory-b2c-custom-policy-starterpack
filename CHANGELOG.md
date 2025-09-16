@@ -15,6 +15,8 @@ https://learn.microsoft.com/en-us/azure/active-directory-b2c/identity-provider-g
 **- Configure the relying party policy**
   - Update the ReferenceId to match the user journey ID, in which you added the identity provider.
 
+--------------------------------------------------------------------------
+
 ### Google sign-in error #1
 
 https://accounts.google.com/signin/oauth/error
@@ -43,6 +45,7 @@ The OAuth client was not found.
 - Use <Item Key="client_id">738729231747-vl1tn95t0hsh6bdum6olqdt3jvb9r99b.apps.googleusercontent.com</Item>
 - Based on the editor formatting, it might wrap the line, and introduce a newline character at the end of the line.
 
+--------------------------------------------------------------------------
 
 ### Error 400: redirect_uri_mismatch
 
@@ -77,6 +80,9 @@ If you're the app developer, register the redirect URI in the Google Cloud Conso
 
 **Note:** Update google developer console with redirect URI: https://myyorkorg.b2clogin.com/myyorkorg.onmicrosoft.com/oauth2/authresp
 
+--------------------------------------------------------------------------
+
+### Google OAuth endpoints update
 
 Update TrustFrameworkExtensions.xml file to use the latest Google OAuth endpoints
 Authorization endpoint: now uses /o/oauth2/v2/auth
@@ -88,3 +94,18 @@ The new endpoints support OpenID Connect and are recommended by Google for all n
 The /v2/auth endpoint is required for newer scopes and features.
 The new userinfo endpoint is more reliable and future-proof.
 
+--------------------------------------------------------------------------
+
+ServerError: server_error: AADB2C: 
+A claim with id 'issuerUserId' was not found, which is required by ClaimsTransformation 'CreateAlternativeSecurityId' 
+with id 'CreateAlternativeSecurityId' in policy 'B2C_1A_signup_signin' of tenant 'myyorkorg.onmicrosoft.com'.
+
+Correlation ID: 56ed5c09-7a5a-4b5f-9f46-81db3dfd9ee3
+Timestamp: 2025-09-16 21:18:51Z
+
+Replace
+<OutputClaim ClaimTypeReferenceId="issuerUserId" PartnerClaimType="id"/>
+with
+<OutputClaim ClaimTypeReferenceId="issuerUserId" PartnerClaimType="sub"/>
+
+--------------------------------------------------------------------------
