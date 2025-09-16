@@ -26,7 +26,7 @@ Handling Sign In:
 1. If the user submits their credentials (signs in), we must validate the credentials.
 1. Issue an id token.
 
-## Translating this into custom policies  
+## Translating this into custom policies
 
 Handling Sign Up
 
@@ -43,7 +43,7 @@ Handling Sign In:
 1. Use the combined sign in and sign up content definition, which provides this for us.
 1. Run a Validation technical profile to validate the credentials.
 1. Read any additional information from the directory user object.
-1. Call a technical profile to issue a token.  
+1. Call a technical profile to issue a token.
 
 ## Building the custom policy
 

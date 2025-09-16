@@ -72,7 +72,7 @@ The _CreateUserIdForMFA_ claims transformation creates a unique identifier for t
 
 ### Content definitions
 
-The following [content definition](https://docs.microsoft.com/azure/active-directory-b2c/contentdefinitions) is used to render the MFA registration and verification. 
+The following [content definition](https://docs.microsoft.com/azure/active-directory-b2c/contentdefinitions) is used to render the MFA registration and verification.
 
 ```xml
 <!--
@@ -112,7 +112,7 @@ The following technical profiles in used to support MFA.
 
 
 ```xml
-<!-- 
+<!--
 <ClaimsProviders> -->
   <ClaimsProvider>
     <DisplayName>PhoneFactor</DisplayName>
@@ -223,13 +223,13 @@ The following technical profiles in used to support MFA.
       </TechnicalProfile>
     </TechnicalProfiles>
   </ClaimsProvider>
-<!-- 
+<!--
 </ClaimsProviders> -->
 ```
 
 ## User journeys
 
-The following are the required orchestration steps required for MFA. The _PhoneFactor-Verify_ registers (if the phone number claim is empty), or verifies (if the phone number is stored in the directory).  
+The following are the required orchestration steps required for MFA. The _PhoneFactor-Verify_ registers (if the phone number claim is empty), or verifies (if the phone number is stored in the directory).
 
 ```xml
 <UserJourneys>

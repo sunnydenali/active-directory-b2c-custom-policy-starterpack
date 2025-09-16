@@ -34,14 +34,14 @@ Handling Sign Up for a Local Account:
 1. Issue an id token.
 
 ## Translating this into custom policies
-  
+
 Handling Sign In for a Local Account:
 
 1. This requires a Self-Asserted technical profile. It must present output claims to obtain the email and password claims.
 1. Use the combined sign in and sign up content definition, which provides this for us.
 1. Run a Validation technical profile to validate the credentials.
 1. Read any additional information from the directory user object.
-1. Call a technical profile to issue a token.  
+1. Call a technical profile to issue a token.
 
 Handling Sign In/Up for a SocialAccount:
 
@@ -52,7 +52,7 @@ Handling Sign In/Up for a SocialAccount:
 1. Write the account information to Azure AD B2C if the account was not already present in the directory.
 1. Issue an id token.
 
-1. Using the combined sign in and sign up page, we must instruct Azure AD B2C that there is a new claims provider - Facebook. This will present a button on the page to "Login with Facebook" 
+1. Using the combined sign in and sign up page, we must instruct Azure AD B2C that there is a new claims provider - Facebook. This will present a button on the page to "Login with Facebook"
 1. An OAuth2 technical profile must be configured to be able to redirect the user to Facebook.
 1. Use an Azure Active Directory technical profile to read the directory based off of the user identifier returned from Facebook. Usually the subject claim.
 1. Use a Self-Asserted technical profile, which presents the first name and last name retrieved from Facebook in editable text boxes.
@@ -288,7 +288,7 @@ Here is the breakdown of each claims transformation that is run after the Facebo
 
 These are run such that pre-requisites for creating the account in Azure AD B2C and also for reading the account on subsequent sign in's.
 
-**CreateRandomUPNUserName** - This is required to generate a **prefix** for the userPrincipalName, which will be stored on the user account when created.    
+**CreateRandomUPNUserName** - This is required to generate a **prefix** for the userPrincipalName, which will be stored on the user account when created.
 
 ```xml
 <ClaimsTransformation Id="CreateRandomUPNUserName" TransformationMethod="CreateRandomString">

@@ -53,18 +53,18 @@ You can add additional steps into this journey to call any other technical profi
 
 #### Configure the relying party policy
 
-The relying party file must be configured to point to your custom refresh token journey. This allows Azure AD B2C to reference your refresh token journey when your app makes a refresh token request. 
+The relying party file must be configured to point to your custom refresh token journey. This allows Azure AD B2C to reference your refresh token journey when your app makes a refresh token request.
 
 Add an [Endpoint](relyingparty.md#endpoints) with `Id` set to **token** and provide a `UserJourneyReferenceId` referencing the **UserJourney Id** from the prior section. Merge the following XML snippet into your *SignUpOrSignin.xml* file.
 
 ```xml
-<RelyingParty> 
-  <DefaultUserJourney ReferenceId="SignUpOrSignIn" /> 
-    <Endpoints> 
-      <Endpoint Id="Token" UserJourneyReferenceId="RedeemRefreshToken" /> 
+<RelyingParty>
+  <DefaultUserJourney ReferenceId="SignUpOrSignIn" />
+    <Endpoints>
+      <Endpoint Id="Token" UserJourneyReferenceId="RedeemRefreshToken" />
     </Endpoints>
-    ...    
-</RelyingParty> 
+    ...
+</RelyingParty>
 ```
 
 Repeat this for all Relying party files your application may invoke, such as **ProfileEdit.xml** and **PasswordReset.xml**.
@@ -196,7 +196,7 @@ To migrate from the older version of the starter pack to this version:
 1. Upload the newer version of TrustFrameworkBase.xml file.
 1. Upload the new TrustFrameworkLocalization.xml file.
 1. Update your **existing** TrustFrameworkExtension.xml with the new base policy `B2C_1A_TrustFrameworkLocalization`. The following XML snippet demonstrates the base policy  **before** the change:
-    
+
     ```xml
     <!-- file: TrustFrameworkExtensions.xml -->
     <BasePolicy>
@@ -204,7 +204,7 @@ To migrate from the older version of the starter pack to this version:
       <PolicyId>B2C_1A_TrustFrameworkBase</PolicyId>
     </BasePolicy>
     ```
-    
+
     The following XML snippet demonstrates the base policy  **after** the change:
 
     ```xml
@@ -238,7 +238,7 @@ Public Preview Release
 Added Key definition to the metadata element in all four TrustframeworkBase.xml versions. When this Item Key is set to TRUE, the expiration dates on the token issued by B2C will be presented as JSON Numbers.  When set to False (default) they will be presented as strings.
 
 ```xml
-<Item Key="SendTokenResponseBodyWithJsonNumbers">true</Item> 
+<Item Key="SendTokenResponseBodyWithJsonNumbers">true</Item>
 ```
 
 --------------------------------------------
