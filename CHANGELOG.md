@@ -77,3 +77,14 @@ If you're the app developer, register the redirect URI in the Google Cloud Conso
 
 **Note:** Update google developer console with redirect URI: https://myyorkorg.b2clogin.com/myyorkorg.onmicrosoft.com/oauth2/authresp
 
+
+Update TrustFrameworkExtensions.xml file to use the latest Google OAuth endpoints
+Authorization endpoint: now uses /o/oauth2/v2/auth
+Access token endpoint: now uses https://oauth2.googleapis.com/token
+User info endpoint: now uses https://openidconnect.googleapis.com/v1/userinfo
+
+Why update?
+The new endpoints support OpenID Connect and are recommended by Google for all new integrations.
+The /v2/auth endpoint is required for newer scopes and features.
+The new userinfo endpoint is more reliable and future-proof.
+

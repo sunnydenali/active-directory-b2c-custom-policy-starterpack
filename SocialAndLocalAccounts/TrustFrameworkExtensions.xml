@@ -26,9 +26,9 @@
                     <Protocol Name="OAuth2"/>
                     <Metadata>
                         <Item Key="ProviderName">google</Item>
-                        <Item Key="authorization_endpoint">https://accounts.google.com/o/oauth2/auth</Item>
-                        <Item Key="AccessTokenEndpoint">https://accounts.google.com/o/oauth2/token</Item>
-                        <Item Key="ClaimsEndpoint">https://www.googleapis.com/oauth2/v1/userinfo</Item>
+                        <Item Key="authorization_endpoint">https://accounts.google.com/o/oauth2/v2/auth</Item>
+                        <Item Key="AccessTokenEndpoint">https://oauth2.googleapis.com/token</Item>
+                        <Item Key="ClaimsEndpoint">https://openidconnect.googleapis.com/v1/userinfo</Item>
                         <Item Key="scope">email profile</Item>
                         <Item Key="HttpBinding">POST</Item>
                         <Item Key="UsePolicyInRedirectUri">false</Item>
