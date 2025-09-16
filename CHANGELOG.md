@@ -15,8 +15,7 @@ https://learn.microsoft.com/en-us/azure/active-directory-b2c/identity-provider-g
 **- Configure the relying party policy**
   - Update the ReferenceId to match the user journey ID, in which you added the identity provider.
 
-**Google sign-in error details:**
-**Error:**
+### Google sign-in error #1
 
 https://accounts.google.com/signin/oauth/error
 
@@ -26,4 +25,20 @@ client_id = 738729231747-vl1tn95t0hsh6bdum6olqdt3jvb9r99b.apps.googleusercontent
 flowName  = GeneralOAuthFlow
 
 **Solution**
+
+Where did you see this error message invalid_client — The OAuth client was not found
+
+https://accounts.google.com/signin/oauth/error?authError=Cg5pbnZhbGlkX2NsaWVudBIfVGhlIE9BdXRoIGNsaWVudCB3YXMgbm90IGZvdW5kLiCRAw%3D%3D&client_id=738729231747-vl1tn95t0hsh6bdum6olqdt3jvb9r99b.apps.googleusercontent.com%0A++++++++++++++++++++++++&flowName=GeneralOAuthFlow
+
+?authError=Cg5pbnZhbGlkX2NsaWVudBIfVGhlIE9BdXRoIGNsaWVudCB3YXMgbm90IGZvdW5kLiCRAw%3D%3D
+
+That authError value is a base64-like encoded string.
+
+Here’s the decoded message from that authError parameter:
+
+invalid_client
+The OAuth client was not found.
+
 - remove trailing %0A (newline/whitespace) in client_id
+- Use <Item Key="client_id">738729231747-vl1tn95t0hsh6bdum6olqdt3jvb9r99b.apps.googleusercontent.com</Item>
+- Based on the editor formatting, it might wrap the line, and introduce a newline character at the end of the line.
