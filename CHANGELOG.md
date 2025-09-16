@@ -14,3 +14,16 @@ https://learn.microsoft.com/en-us/azure/active-directory-b2c/identity-provider-g
       - Update the value of TechnicalProfileReferenceId to the Id of the technical profile you created earlier.
 **- Configure the relying party policy**
   - Update the ReferenceId to match the user journey ID, in which you added the identity provider.
+
+**Google sign-in error details:**
+**Error:**
+
+https://accounts.google.com/signin/oauth/error
+
+authError = Cg5pbnZhbGlkX2NsaWVudBIfVGhlIE9BdXRoIGNsaWVudCB3YXMgbm90IGZvdW5kLiCRAw==
+client_id = 738729231747-vl1tn95t0hsh6bdum6olqdt3jvb9r99b.apps.googleusercontent.com
+
+flowName  = GeneralOAuthFlow
+
+**Solution**
+- remove trailing %0A (newline/whitespace) in client_id
